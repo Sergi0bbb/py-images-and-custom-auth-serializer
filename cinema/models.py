@@ -42,6 +42,7 @@ class Actor(models.Model):
 def movie_image_path(movie, filename) -> str:
     ext = os.path.splitext(filename)[1]
     return os.path.join(
+        "uploads",
         "movies",
         f"{slugify(movie.title)}-{uuid.uuid4()}{ext}"
     )
